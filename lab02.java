@@ -39,7 +39,7 @@ public class lab02 {
         Scanner input = new Scanner(System.in);
         boolean wartosc = true;
         while(wartosc){
-        System.out.println("1)Suma 2)Różnica 3)Iloczyn 4)Iloraz 5)Potęga 6)Pierwiastek 7)Trygonometria 8)Zamknij");
+        System.out.println("\n1)Suma 2)Różnica 3)Iloczyn 4)Iloraz 5)Potęga 6)Pierwiastek 7)Trygonometria 8)Tablica(poczatek) 9)Tablica(koniec) 10)Tablica(parzyste) \n11)Tablica(nieparzyste) 12)Tablica(suma) 13)Tablica(iloczyn) 14)Tablica(srednia) 15)Tablica(min) 16)Tablica(max) 17)Zamknij");
         System.out.print("Wybor: ");
         int wybor = input.nextInt();
         switch(wybor){
@@ -50,7 +50,16 @@ public class lab02 {
             case 5->potega();
             case 6->pierwiastek();
             case 7->funTryg();
-            case 8->wartosc=false;
+            case 8->wyswietleniea();
+            case 9->wyswietlenieb();
+            case 10->wyswietleniec();
+            case 11->wyswietlenied();
+            case 12->wyswietleniee();
+            case 13->wyswietlenief();
+            case 14->wyswietlenieg();
+            case 15->wyswietlenieh();
+            case 16->wyswietleniei();
+            case 17->wartosc=false;
         }
     }
 }
@@ -105,6 +114,140 @@ public class lab02 {
         System.out.print("Podaj liczbe: ");
         double l1=input.nextDouble();
         System.out.format("Sinus: %f\nCosinus: %f\nTangens: %f\nCotangens: %f \n\n",Math.sin(toRadians(l1)),Math.cos(toRadians(l1)),Math.tan(toRadians(l1)),1/(Math.tan(toRadians(l1))));
+    }
+    //zad.3 a)
+    public static void wyswietleniea(){
+        Scanner input = new Scanner(System.in);
+        int[] tablica = new int[10];
+        System.out.println("Wprowadz 10 liczb do tablicy: ");
+        for(int i=0; i<tablica.length; i++){
+            tablica[i] = input.nextInt();
+        }
+        System.out.print("Elementy tablicy (od poczatku): ");
+        for(int i=0; i<tablica.length; i++){
+            System.out.format("%d ",tablica[i]);
+        }
+    }
+    //zad.3 b)
+    public static void wyswietlenieb(){
+        Scanner input = new Scanner(System.in);
+        int[] tablica = new int[10];
+        System.out.println("Wprowadz 10 liczb do tablicy: ");
+        for(int i=0; i<tablica.length; i++){
+            tablica[i] = input.nextInt();
+        }
+        System.out.print("Elementy tablicy (od konca): ");
+        for(int i=tablica.length-1; i>=0; i--){
+            System.out.format("%d ",tablica[i]);
+        }
+    }
+    //zad.3 c)
+    public static void wyswietleniec() {
+        Scanner input = new Scanner(System.in);
+        int[] tablica = new int[10];
+        System.out.println("Wprowadz 10 liczb do tablicy: ");
+        for (int i = 0; i < tablica.length; i++) {
+            tablica[i] = input.nextInt();
+        }
+        System.out.print("Elementy tablicy (parzyste indeksy): ");
+        for (int i = 0; i < tablica.length; i++) {
+            if (i % 2 == 0) {
+                System.out.format("%d ", tablica[i]);
+            }
+        }
+    }
+    //zad.3 d)
+    public static void wyswietlenied() {
+        Scanner input = new Scanner(System.in);
+        int[] tablica = new int[10];
+        System.out.println("Wprowadz 10 liczb do tablicy: ");
+        for (int i = 0; i < tablica.length; i++) {
+            tablica[i] = input.nextInt();
+        }
+        System.out.print("Elementy tablicy (parzyste indeksy): ");
+        for (int i = 0; i < tablica.length; i++) {
+            if (i % 2 != 0) {
+                System.out.format("%d ", tablica[i]);
+            }
+        }
+    }
+    //zad.4 e)
+    public static void wyswietleniee(){
+        Scanner input = new Scanner(System.in);
+        int suma=0;
+        int[] tablica = new int[10];
+        System.out.println("Wprowadz 10 liczb do tablicy: ");
+        for(int i=0; i<tablica.length; i++){
+            tablica[i] = input.nextInt();
+        }
+        for(int i=0; i<tablica.length; i++){
+            suma+=tablica[i];
+        }
+        System.out.format("Suma elementow tablicy: %d",suma);
+    }
+    //zad.4 f)
+    public static void wyswietlenief(){
+        Scanner input = new Scanner(System.in);
+        int iloczyn=1;
+        int[] tablica = new int[10];
+        System.out.println("Wprowadz 10 liczb do tablicy: ");
+        for(int i=0; i<tablica.length; i++){
+            tablica[i] = input.nextInt();
+        }
+        for(int i=0; i<tablica.length; i++){
+            iloczyn*=tablica[i];
+        }
+        System.out.format("Iloczyn elementow tablicy: %d",iloczyn);
+    }
+    //zad.4 g)
+    public static void wyswietlenieg(){
+        Scanner input = new Scanner(System.in);
+        double srednia=0;
+        double suma=0;
+        double ilosc=0;
+        int[] tablica = new int[10];
+        System.out.println("Wprowadz 10 liczb do tablicy: ");
+        for(int i=0; i<tablica.length; i++){
+            tablica[i] = input.nextInt();
+        }
+        for(int i=0; i<tablica.length; i++){
+            suma+=tablica[i];
+            ilosc++;
+        }
+        srednia=suma/ilosc;
+        System.out.format("Srednia elementow tablicy: %f",srednia);
+    }
+    //zad.4 h)
+    public static void wyswietlenieh(){
+        Scanner input = new Scanner(System.in);
+        int[] tablica = new int[10];
+        System.out.println("Wprowadz 10 liczb do tablicy: ");
+        for(int i=0; i<tablica.length; i++){
+            tablica[i] = input.nextInt();
+        }
+        int min=tablica[0];
+        for(int i=0; i<tablica.length; i++){
+            if(min>tablica[i]){
+                min=tablica[i];
+            }
+        }
+        System.out.format("Minimum elementow tablicy: %d",min);
+    }
+    //zad.4 i)
+    public static void wyswietleniei(){
+        Scanner input = new Scanner(System.in);
+        int[] tablica = new int[10];
+        System.out.println("Wprowadz 10 liczb do tablicy: ");
+        for(int i=0; i<tablica.length; i++){
+            tablica[i] = input.nextInt();
+        }
+        int max=tablica[0];
+        for(int i=0; i<tablica.length; i++){
+            if(max<tablica[i]){
+                max=tablica[i];
+            }
+        }
+        System.out.format("Maksimum elementow tablicy: %d",max);
     }
     //zad.5
     public static void wylaczenie() {
