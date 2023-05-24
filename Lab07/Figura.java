@@ -22,9 +22,8 @@ public abstract class Figura{
         return kolor;
     }
     //metody abstrakcyjne
-    public String opis(){
-        return "Obiekt klasy Prostokat";
-    }
+    public abstract String opis();
+
+    public abstract void skaluj(float skala);
 
 }
-
